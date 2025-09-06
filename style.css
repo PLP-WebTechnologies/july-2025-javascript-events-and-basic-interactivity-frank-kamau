@@ -1,0 +1,55 @@
+:root{
+--bg:#f4f7fb; --card:#fff; --text:#102030; --accent:#0b63ff; --muted:#566776;
+}
+:root.dark{ --bg:#0f1720; --card:#0b1220; --text:#e6eef9; --accent:#7db4ff; --muted:#aab6c7 }
+
+
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--text);}
+.container{max-width:1000px;margin:0 auto;padding:1rem}
+.site-header{border-bottom:1px solid rgba(0,0,0,0.06);background:linear-gradient(#fff,#f7fbff)}
+.site-header .container{display:flex;align-items:center;justify-content:space-between}
+.main-nav{display:flex;gap:1rem;align-items:center}
+button{cursor:pointer}
+
+
+.panel{margin-top:1rem}
+.card{background:var(--card);padding:1rem;border-radius:8px;border:1px solid rgba(11,99,255,0.06);margin-bottom:1rem}
+.lead{color:var(--muted)}
+
+/* FAQ */
+.faq-item{margin-bottom:0.5rem}
+.faq-q{width:100%;text-align:left;padding:0.6rem;border-radius:6px;border:1px solid rgba(0,0,0,0.06);background:transparent}
+.faq-a{padding:0.5rem 0.75rem;display:none}
+.faq-item.open .faq-a{display:block}
+
+
+/* Tabs */
+.tabs .tab{background:transparent;border:none;padding:0.4rem 0.6rem;border-radius:6px}
+.tabs .tab.active{background:var(--accent);color:white}
+.subtabs{display:flex;gap:0.5rem}
+.subpanel{display:none;padding:0.5rem}
+.subpanel.active{display:block}
+
+
+/* Counter */
+.counter-row{display:flex;align-items:center;gap:1rem;justify-content:center;margin:1rem 0}
+#count{min-width:70px;text-align:center;padding:0.6rem;border-radius:8px;background:var(--card);border:1px solid rgba(0,0,0,0.06);font-size:1.25rem}
+.controls{display:flex;gap:0.5rem;justify-content:center}
+.message{margin-top:0.75rem}
+
+/* Form */
+form label{display:block;margin-top:0.75rem}
+input{width:100%;padding:0.5rem;border-radius:6px;border:1px solid rgba(0,0,0,0.08)}
+.form-actions{margin-top:1rem;display:flex;gap:0.5rem}
+small.error{color:#b91c1c;min-height:1em;display:block}
+.success{background:linear-gradient(#e6ffea,#f7fff5);padding:1rem;border-radius:6px;border:1px solid #bde8c6}
+.hidden{display:none}
+
+
+.site-footer{margin-top:2rem;padding:1rem;text-align:center;color:var(--muted)}
+
+
+@media (max-width:700px){
+.site-header .container{flex-direction:column;align-items:flex-start;gap:0.5rem}
+}

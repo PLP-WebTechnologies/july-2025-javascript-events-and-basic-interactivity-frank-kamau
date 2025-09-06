@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Interactive Demo — JS Events & Validation</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+<div class="container">
+<h1>Interactive Web Demo</h1>
+<nav class="main-nav" aria-label="Main navigation">
+<button id="theme-toggle" aria-pressed="false">Toggle Dark Mode</button>
+<div class="tabs" role="tablist" aria-label="Main Tabs">
+<button role="tab" data-target="#features" class="tab active">Features</button>
+<button role="tab" data-target="#game" class="tab">Game</button>
+<button role="tab" data-target="#form" class="tab">Form</button>
+</div>
+</nav>
+</div>
+</header>
+
+<main class="container">
+<!-- FEATURES PANEL -->
+<section id="features" class="panel">
+<h2>Interactive Features</h2>
+
+
+<!-- Light / Dark Mode -->
+<article class="card">
+<h3>Light / Dark Mode</h3>
+<p>Toggle the page theme. Preference is saved to <code>localStorage</code>.</p>
+<button id="theme-toggle-2">Toggle Theme (Alternate)</button>
+</article>
+
+
+<!-- Collapsible FAQ -->
+<article class="card">
+<h3>Collapsible FAQ</h3>
+<div class="faq">
+<div class="faq-item">
+<button class="faq-q" aria-expanded="false">What is this demo about?</button>
+<div class="faq-a">This demo shows JavaScript event handling, interactions and custom form validation.</div>
+</div>
+<div class="faq-item">
+<button class="faq-q" aria-expanded="false">How is validation handled?</button>
+<div class="faq-a">Validation is done with custom JavaScript (no HTML5-only validation).</div>
+</div>
+<div class="faq-item">
+<button class="faq-q" aria-expanded="false">Can I use keyboard shortcuts?</button>
+<div class="faq-a">Yes — press the ArrowUp / ArrowDown keys to change the counter.</div>
+</div>
+</div>
+</article>
+
+<!-- Tabbed subsection example -->
+<article class="card">
+<h3>Tabbed Interface (inside Features)</h3>
+<div class="subtabs" role="tablist">
+<button class="subtab active" data-panel="#p1">Panel 1</button>
+<button class="subtab" data-panel="#p2">Panel 2</button>
+</div>
+<div class="subpanels">
+<div id="p1" class="subpanel active">Content for panel 1. Click the other tab to switch.</div>
+<div id="p2" class="subpanel">Content for panel 2. Tabs are keyboard accessible.</div>
+</div>
+</article>
+
+
+</section>
+
+
+
+<!-- GAME PANEL -->
+<section id="game" class="panel hidden">
+<h2>Simple Counter Game</h2>
+<div class="card">
+<p class="lead">Use the buttons or keyboard (ArrowUp, ArrowDown) to change the counter. Reach 10 to win!</p>
+<div class="counter-row">
+<button id="dec">-</button>
+<div id="count" aria-live="polite">0</div>
+<button id="inc">+</button>
+</div>
+<div class="controls">
+<button id="reset">Reset</button>
+<button id="random">Randomize</button>
+</div>
+<div id="game-message" class="message" role="status"></div>
+</div>
+</section>
+
+
+<!-- FORM PANEL -->
+<section id="form" class="panel hidden">
+<h2>Signup Form (Custom Validation)</h2>
+<form id="signup-form" novalidate>
+<fieldset>
+<label for="name">Full Name</label>
+<input type="text" id="name" name="name" autocomplete="name" required>
+<small class="error" id="name-error" aria-live="polite"></small>
+
+
+<label for="email">Email</label>
+<input type="email" id="email" name="email" autocomplete="email" required>
+<small class="error" id="email-error" aria-live="polite"></small>
+
+
+<label for="password">Password</label>
+<input type="password" id="password" name="password" required>
+<small class="error" id="password-error" aria-live="polite"></small>
+
+
+<label for="confirm">Confirm Password</label>
+<input type="password" id="confirm" name="confirm" required>
+<small class="error" id="confirm-error" aria-live="polite"></small>
+
+
+<label for="phone">Phone (optional)</label>
+<input type="tel" id="phone" name="phone" placeholder="+254712345678">
+<small class="error" id="phone-error" aria-live="polite"></small>
+
+
+<div class="form-actions">
+<button type="submit">Sign Up</button>
+<button type="reset">Reset</button>
+</div>
+</fieldset>
+</form>
+<div id="form-success" class="success hidden" role="status">Form submitted successfully! ✅</div>
+</section>
+
+
+</main>
+
+
+<footer class="site-footer">
+<div class="container">Interactive Demo • JavaScript Event Handling • Form Validation</div>
+</footer>
+
+
+<script src="script.js"></script>
+</body>
+</html>
